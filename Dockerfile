@@ -6,7 +6,7 @@ COPY redis.conf .
 
 RUN mkdir -p /etc/secrets
 RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env cat /etc/secrets/.env
-
+RUN --mount=type=secret,id=kong_config,dst=/tmp/kong.config cat /tmp/kong.config
 
 
 ENTRYPOINT ["redis-server", "./redis.conf"]
