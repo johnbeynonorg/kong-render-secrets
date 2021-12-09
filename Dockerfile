@@ -12,11 +12,3 @@ RUN --mount=type=secret,id=kong_config,dst=/tmp/kong.config cp /tmp/kong.config 
 
 
 ENTRYPOINT ["redis-server", "./redis.conf"]
-
-#FROM kong/kong-gateway:2.6.0.1-alpine
-
-#RUN mkdir -p /home/kong/render-config
-
-
-
-# RUN --mount=type=secret,id=kong_config,dst=/tmp/kong.config cp /tmp/kong.config /home/kong/render-config/kong.config
